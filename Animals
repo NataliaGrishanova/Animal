@@ -1,0 +1,124 @@
+class Animal:
+    voice = 'звук'
+    name = 'животное'
+    interaction = 'гладить'
+    weight = 0
+    care = 'покормят'
+
+    def give_food(self):
+        self.care = care
+
+    def __init__(self, name, voice, weight, interaction, care):
+        self.name = name
+        self.voice = voice
+        self.weight = weight
+        self.interaction = interaction
+        self.care = care
+
+
+animal_weight = []
+
+
+class Goose(Animal):
+    pass
+
+
+Goose.voice = 'Га-га-га!'
+goose0 = Goose('Серый', Goose.voice, 10, 'собрать яйца', Goose.care)
+goose1 = Goose('Белый', Goose.voice, 12, 'собрать яйца', Goose.care)
+print(f'У гусей по кличке {goose0.name} и {goose1.name} нужно {goose0.interaction}.')
+print(f'Когда гусей с кличками {goose0.name} и {goose1.name} {Goose.care}, они скажут - {Goose.voice}')
+print(f'Вес гуся по кличке {goose0.name} - {goose0.weight} кг, а гуся по кличке {goose1.name} - {goose1.weight} кг.')
+print()
+
+animal_weight.append([goose0.name, goose0.weight])
+animal_weight.append([goose1.name, goose1.weight])
+
+
+class Cow(Animal):
+    pass
+
+
+Cow.voice = 'Му-у-у!'
+сow0 = Cow('Манька', Cow.voice, 95, 'подоить', Cow.care)
+print(f'Корову по кличке {сow0.name} нужно {сow0.interaction}.')
+print(f'Когда корову по кличке {сow0.name} {Cow.care}, она скажет - {Cow.voice}')
+print(f'Вес коровы по кличке {сow0.name} - {сow0.weight} кг.')
+print()
+
+animal_weight.append([сow0.name, сow0.weight])
+
+
+class Sheep(Animal):
+    pass
+
+
+Sheep.voice = 'Ме-е-е!'
+sheep0 = Sheep('Барашек', Sheep.voice, 40, 'постричь', Sheep.care)
+sheep1 = Sheep('Кудрявый', Sheep.voice, 45, 'постричь', Sheep.care)
+print(f'Овец по кличке {sheep0.name} и {sheep1.name} нужно {sheep0.interaction}.')
+print(f'Когда овец с кличками {sheep0.name} и {sheep1.name} {Sheep.care}, они скажут - {Sheep.voice}')
+print(f'Вес овцы по кличке {sheep0.name} - {sheep0.weight} кг, а овцы по кличке {sheep1.name} - {sheep1.weight} кг.')
+print()
+
+animal_weight.append([sheep0.name, sheep0.weight])
+animal_weight.append([sheep1.name, sheep1.weight])
+
+
+class Chicken(Animal):
+    pass
+
+
+Chicken.voice = 'Ко-ко-ко!'
+chicken0 = Chicken('Ко-Ко', Chicken.voice, 5, 'собрать яйца', Chicken.care)
+chicken1 = Chicken('Кукареку', Chicken.voice, 7, 'собрать яйца', Chicken.care)
+print(f'У кур по кличке {chicken0.name} и {chicken1.name} нужно {chicken0.interaction}.')
+print(f'Когда кур с кличками {chicken0.name} и {chicken1.name} {Chicken.care}, они скажут - {Chicken.voice}')
+print(f'Вес курицы по кличке {chicken0.name} - {chicken0.weight} кг, а курицы по кличке {chicken1.name} - {chicken1.weight} кг.')
+print()
+
+
+animal_weight.append([chicken0.name, chicken0.weight])
+animal_weight.append([chicken1.name, chicken1.weight])
+
+
+class Goat(Animal):
+    pass
+
+
+Goat.voice = 'Бе-е-е!'
+goat0 = Goat('Рога', Goat.voice, 50, 'подоить', Goat.care)
+goat1 = Goat('Копыта', Goat.voice, 55, 'подоить', Goat.care)
+print(f'Коз по кличке {goat0.name} и {goat1.name} нужно {goat0.interaction}.')
+print(f'Когда коз с кличками {goat0.name} и {goat1.name} {Goat.care}, они скажут - {Goat.voice}')
+print(f'Вес коз по кличке {goat0.name} - {goat0.weight} кг, а козы по кличке {goat1.name} - {goat1.weight} кг.')
+print()
+
+
+animal_weight.append([goat0.name, goat0.weight])
+animal_weight.append([goat1.name, goat1.weight])
+
+
+class Duck(Animal):
+    pass
+
+
+Duck.voice = 'Кря-кря!'
+duck0 = Duck('Кряква', Duck.voice, 15, 'собрать яйца', Duck.care)
+print(f'У утки по кличке {duck0.name} нужно {duck0.interaction}.')
+print(f'Когда утку по кличке {duck0.name} {Duck.care}, она скажет - {Duck.voice}')
+print(f'Вес утки по кличке {duck0.name} - {duck0.weight} кг.')
+print()
+
+
+animal_weight.append([duck0.name, duck0.weight])
+dict_animal_weight = dict(animal_weight)
+
+amount = sum(dict_animal_weight.values())
+max_val = max(dict_animal_weight.values())
+
+print(f'Общий вес всех животных: {amount} кг.')
+
+for keys, values in dict_animal_weight.items():
+    if values == max_val:
+        print(f'Кличка самого тяжелого животного - {keys}. Она весит {values} кг.')
